@@ -11,7 +11,7 @@ spec:
     targetRevision: HEAD
     path: apps
   destination: 
-    server: wwv2ce.c1.de1.k8s.ovh.net
+    server: https://kubernetes.default.svc
     namespace: myapp
 
   syncPolicy:
