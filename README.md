@@ -6,4 +6,7 @@
 ```
 https://argo-cd.readthedocs.io/en/stable/getting_started/
 ```
-4 - 
+4 - You apply the application.yaml file once:
+```
+kubectl apply -f .\application.yaml
+```
