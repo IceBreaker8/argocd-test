@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/IceBreaker8/argocd-test.git
     targetRevision: HEAD
-    path: app
+    path: apps
   destination: 
     server: https://kubernetes.default.svc
     namespace: myapp
