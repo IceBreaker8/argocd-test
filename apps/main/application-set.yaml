@@ -4,26 +4,25 @@ metadata:
   name: cluster-addons
   namespace: argocd
 spec:
-  goTemplate: true
-  goTemplateOptions: ["missingkey=error"]
   generators:
   - git:
       repoURL: https://github.com/IceBreaker8/argocd-test
-      revision: HEAD
+      revision: main
       directories:
       - path: apps/main/*
   template:
     metadata:
-      name: '{{.path.basename}}'
+      name: '{{path.basename}}'
     spec:
-      project: "my-project"
+      project: default
       source:
         repoURL: https://github.com/IceBreaker8/argocd-test
-        targetRevision: HEAD
-        path: '{{.path.path}}'
+        targetRevision: main
+        path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{.path.basename}}'
+        namespace: '{{path.basename}}'
       syncPolicy:
+        automated: {}
         syncOptions:
         - CreateNamespace=true
