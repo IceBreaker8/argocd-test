@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: wynnaspects-app
+  name: wynnaspects-web
   namespace: argocd
 spec:
   generators:
@@ -9,7 +9,7 @@ spec:
       repoURL: https://github.com/IceBreaker8/argocd-test
       revision: main
       directories:
-      - path: apps/wynnaspects-app/*
+      - path: apps/wynnaspects-web/*
   template:
     metadata:
       name: '{{path.basename}}'
@@ -26,5 +26,3 @@ spec:
         automated: 
           selfHeal: true
           prune: true
-        syncOptions:
-        - CreateNamespace=true
