@@ -10,3 +10,6 @@ https://argo-cd.readthedocs.io/en/stable/getting_started/
 ```
 kubectl apply -f .\application.yaml
 ```
+
+## ArgoCD as context namespace (no need for -n namespace)
+kubectl config set-context --current --namespace=argocd

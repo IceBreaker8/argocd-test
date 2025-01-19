@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: home
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/IceBreaker8/argocd-test
+        revision: HEAD
+        directories:
+          - path: apps/main/*
+  template:
+    metadata:
+      name: '{{ path.basename }}'
+    spec:
+      project: home
+      source:
+        repoURL: https://github.com/IceBreaker8/argocd-test
+        targetRevision: HEAD
+        path: '{{ path }}'
+      destination:
+        name: in-cluster
+        namespace: argocd
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
