@@ -16,7 +16,7 @@ spec:
     metadata:
       name: '{{.path.basename}}'
     spec:
-      project: "frontend"
+      project: "my-project"
       source:
         repoURL: https://github.com/IceBreaker8/argocd-test
         targetRevision: HEAD
