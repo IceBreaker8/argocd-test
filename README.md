@@ -13,3 +13,6 @@ kubectl apply -f .\application.yaml
 
 ## ArgoCD as context namespace (no need for -n namespace)
 kubectl config set-context --current --namespace=argocd
+
+## cleanup application sets
+kubectl delete applicationsets --all -n argocd
