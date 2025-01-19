@@ -9,7 +9,7 @@ spec:
       repoURL: https://github.com/IceBreaker8/argocd-test
       revision: main
       directories:
-      - path: apps/main/*
+      - path: apps/wynnaspects-app/*
   template:
     metadata:
       name: '{{path.basename}}'
