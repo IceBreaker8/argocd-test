@@ -1,0 +1,7 @@
+apiVersion: v2
+name: my-custom-chart
+version: 0.1.0
+dependencies:
+  - name: postgresql
+    version: "16.3.0"  # Use the desired version
+    repository: "https://charts.bitnami.com/bitnami"

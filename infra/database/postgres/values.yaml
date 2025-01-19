@@ -1,0 +1,13 @@
+postgresql:
+  enabled: true
+  auth:
+    username: myapp
+    password: mypassword
+    database: myappdb
+  primary:
+    persistence:
+      size: 8Gi
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
