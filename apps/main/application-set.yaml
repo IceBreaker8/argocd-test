@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cluster-addons
+  name: full-stack
   namespace: argocd
 spec:
   generators:
@@ -21,8 +21,10 @@ spec:
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
+        namespace: '{{path.basename}}-nz'
       syncPolicy:
-        automated: {}
+        automated: 
+          selfHeal: true
+          prune: true
         syncOptions:
         - CreateNamespace=true
