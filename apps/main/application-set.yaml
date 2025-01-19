@@ -20,8 +20,8 @@ spec:
         targetRevision: HEAD
         path: '{{ path }}'
       destination:
-        name: in-cluster
-        namespace: argocd
+        server: https://kubernetes.default.svc
+        namespace: '{{ path.basename }}'  # Or specify your desired namespace strategy
       syncPolicy:
         automated:
           selfHeal: true
