@@ -12,7 +12,7 @@ spec:
       - path: apps/wynnaspects-web/*
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: '{{path.basename}}-web'
     spec:
       project: default
       source:
