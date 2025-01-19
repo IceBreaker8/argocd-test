@@ -16,3 +16,5 @@ kubectl config set-context --current --namespace=argocd
 
 ## cleanup application sets
 kubectl delete applicationsets --all -n argocd
+## cleanup namespaces
+kubectl delete namespace myapp
