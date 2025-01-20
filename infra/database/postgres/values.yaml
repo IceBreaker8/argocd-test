@@ -6,4 +6,4 @@ postgresql:
     database: myappdb
   primary:
     persistence:
-      size: 4Gi
+      size: 8Gi
