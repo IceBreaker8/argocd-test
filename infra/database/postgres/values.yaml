@@ -2,4 +2,4 @@ postgresql:
   enabled: true
   primary:
     persistence:
-      size: 10Gi
+      size: 9Gi
