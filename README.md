@@ -1,21 +1,36 @@
 ## Accessing the cluster
 
 1 - Install kubeconfig from your cloud provider's managed k8s cluster
-2 - Replace the .kube/config file with the kubeconfig.yaml (without any file extensions)
-3 - Install argoCD:
+2 - Powershell: [System.Environment]::SetEnvironmentVariable("KUBECONFIG", "C:\path\to\your\kubeconfig.yaml", "User")
+3 - Install argoCD using the kubectl CLI
+
 ```
 https://argo-cd.readthedocs.io/en/stable/getting_started/
 ```
+
 4 - You apply the application.yaml file once:
+
 ```
 kubectl apply -f .\application.yaml
 ```
 
+## Install Helm on local (to be able to use the helm CLI)
+
+winget install Helm.Helm
+
 ## ArgoCD as context namespace (no need for -n namespace)
+
 kubectl config set-context --current --namespace=argocd
 
+## Access argoCD locally through port forward
+
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+
 ## cleanup application sets
+
 kubectl delete applicationsets --all -n argocd
+
 ## cleanup namespaces
+
 kubectl get namespaces
 kubectl delete namespace myapp
