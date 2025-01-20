@@ -38,3 +38,7 @@ kubectl delete namespace myapp
 ## Port forward (get services first by namespace to check their type and port )
 
 kubectl port-forward svc/kube-prometheus-stack-grafana 8001:80 -n kube-prometheus-stack
+
+## Check all PVCs in all namespaces
+
+kubectl get pvc -A
