@@ -1,9 +1,5 @@
 postgresql:
   enabled: true
-  auth:
-    username: myapp
-    password: mypassword
-    database: myappdb
   primary:
     persistence:
       size: 10Gi
