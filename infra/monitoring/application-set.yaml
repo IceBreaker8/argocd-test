@@ -1,29 +1,29 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: database
+  name: monitoring
   namespace: argocd
 spec:
   generators:
-  - git:
-      repoURL: https://github.com/IceBreaker8/argocd-test
-      revision: main
-      directories:
-      - path: infra/database/*
+    - git:
+        repoURL: https://github.com/IceBreaker8/argocd-test
+        revision: main
+        directories:
+          - path: infra/monitoring/*
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: "{{path.basename}}"
     spec:
       project: default
       source:
         repoURL: https://github.com/IceBreaker8/argocd-test
         targetRevision: main
-        path: '{{path}}'
+        path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
+        namespace: "{{path.basename}}"
       syncPolicy:
-        automated: 
+        automated:
           selfHeal: true
           prune: true
         syncOptions:
