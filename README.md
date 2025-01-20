@@ -34,3 +34,7 @@ kubectl delete applicationsets --all -n argocd
 
 kubectl get namespaces
 kubectl delete namespace myapp
+
+## Port forward (get services first by namespace to check their type and port )
+
+kubectl port-forward svc/kube-prometheus-stack-grafana 8001:80 -n kube-prometheus-stack
