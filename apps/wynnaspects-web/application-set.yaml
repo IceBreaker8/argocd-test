@@ -14,7 +14,7 @@ spec:
     metadata:
       name: '{{path.basename}}' 
       labels:
-        me: test
+        app: test
     spec:
       project: default
       source:
