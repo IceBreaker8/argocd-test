@@ -3,6 +3,7 @@ kind: ApplicationSet
 metadata:
   name: controllers
   namespace: argocd
+
 spec:
   generators:
     - git:
