@@ -16,7 +16,10 @@ Get ArgoCD password and decode the base64 (change it later):
 ```
 kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
 ```
-# Install ArgoCD: 
+# Install Gateway API:
+```
+kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/latest/download/experimental-install.yaml 
+```
 
 ## Install Helm on local (to be able to use the helm CLI)
 
