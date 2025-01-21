@@ -12,9 +12,7 @@ spec:
       - path: apps/wynnaspects-web/*
   template:
     metadata:
-      name: '{{path.basename}}'
-      labels: # Add your labels here
-        me: wynnaspects-web 
+      name: '{{path.basename}}' 
     spec:
       project: default
       source:
