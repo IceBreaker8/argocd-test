@@ -13,6 +13,9 @@ spec:
   template:
     metadata:
       name: '{{path.basename}}'
+        labels: # Add your labels here
+          app.kubernetes.io/name: wynnaspects-web
+          app.kubernetes.io/managed-by: argocd   
     spec:
       project: default
       source:
