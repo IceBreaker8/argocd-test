@@ -3,6 +3,8 @@ kind: ApplicationSet
 metadata:
   name: wynnaspects-web
   namespace: argocd
+  labels:
+    me: wynnaspects-web
 spec:
   generators:
   - git:
