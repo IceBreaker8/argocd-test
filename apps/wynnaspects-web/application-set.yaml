@@ -4,7 +4,7 @@ metadata:
   name: wynnaspects-web
   namespace: argocd
   labels:
-    me: wynnaspects-web
+    me: test
 spec:
   generators:
   - git:
@@ -16,7 +16,7 @@ spec:
     metadata:
       name: '{{path.basename}}' 
       labels:
-        me: wynnaspects-web
+        me: test
     spec:
       project: default
       source:
