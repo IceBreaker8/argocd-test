@@ -14,7 +14,7 @@ spec:
     metadata:
       name: '{{path.basename}}' 
       labels:
-        app: test
+        app: wynnaspects-web
     spec:
       project: default
       source:
