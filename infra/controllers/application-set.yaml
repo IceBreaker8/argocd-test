@@ -5,12 +5,12 @@ metadata:
   namespace: argocd
 spec:
   generators:
-  - git:
-      repoURL: https://github.com/IceBreaker8/argocd-test
-      revision: main
-      directories:
-      - path: infra/controllers/*
-      - path: infra/controllers/cert-manager
+    - git:
+        repoURL: https://github.com/IceBreaker8/argocd-test
+        revision: main
+        directories:
+          - path: infra/controllers/*
+          - path: infra/controllers/cert-manager
             exclude: true
   template:
     metadata:
