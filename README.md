@@ -3,50 +3,51 @@
 ## Accessing the cluster
 
 1 - Install kubeconfig from your cloud provider's managed k8s cluster
-2 - Powershell: [System.Environment]::SetEnvironmentVariable("KUBECONFIG", "C:\path\to\your\kubeconfig.yaml", "User")
+2 - Powershell: 
+```bash
+[System.Environment]::SetEnvironmentVariable("KUBECONFIG", "C:\path\to\your\kubeconfig.yaml", "User")
+```
 
-## Prerequisite
+# Prerequisite
 
-# Install ArgoCD: 
-```
-kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-```
-Get ArgoCD password and decode the base64 (change it later):
-```
-kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
-```
-# Install Gateway API:
-```
+## Install Gateway API:
+```bash
 kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/latest/download/experimental-install.yaml 
 ```
+## Install ArgoCD with our custom configuration (delete the newly created charts folder)
+```bash
+kubectl kustomize --enable-helm infra/controllers/argocd | kubectl apply -f -
+```
 
-## Install Helm on local (to be able to use the helm CLI)
+## Get ArgoCD password and decode the base64 (change it later):
+```bash
+kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
+```
 
-winget install Helm.Helm
+## Apply the infrastructure THEN the applications manifests
+```bash
+kubectl apply -f .\bootstrap\infrastructure.yaml
+kubectl apply -f .\bootstrap\applications.yaml
+```
 
-## ArgoCD as context namespace (no need for -n namespace)
-
-kubectl config set-context --current --namespace=argocd
-
-## Access argoCD locally through port forward
+# Access argoCD locally through port forward
 
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 
-## cleanup application sets
+# cleanup application sets
 
 kubectl delete applicationsets --all -n argocd
 
-## cleanup namespaces
+# cleanup namespaces
 
 kubectl get namespaces
 kubectl delete namespace myapp
 
-## Port forward (get services first by namespace to check their type and port )
+# Port forward (get services first by namespace to check their type and port )
 
 kubectl port-forward svc/kube-prometheus-stack-grafana 8001:80 -n kube-prometheus-stack
 
-## Check all PVCs in all namespaces
+# Check all PVCs in all namespaces
 
 kubectl get pvc -A
 
