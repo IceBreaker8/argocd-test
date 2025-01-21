@@ -4,7 +4,7 @@ metadata:
   name: wynnaspects-web
   namespace: argocd
   labels:
-      app.kubernetes.io/instance: wynnaspects-web
+    app.kubernetes.io/instance: wynnaspects-web
 spec:
   generators:
   - git:
