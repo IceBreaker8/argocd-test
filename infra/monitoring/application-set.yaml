@@ -10,6 +10,8 @@ spec:
         revision: main
         directories:
           - path: infra/monitoring/*
+          - path: infra/monitoring/kube-prometheus-stack
+            exclude: true
   template:
     metadata:
       name: "{{path.basename}}"
