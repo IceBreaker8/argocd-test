@@ -10,6 +10,8 @@ spec:
       revision: main
       directories:
       - path: infra/controllers/*
+      - path: infra/monitoring/cert-manager
+            exclude: true
   template:
     metadata:
       name: '{{path.basename}}'
