@@ -14,7 +14,7 @@ spec:
     metadata:
       name: '{{path.basename}}'
       labels: # Add your labels here
-        app.kubernetes.io/name: wynnaspects-web 
+        me: wynnaspects-web 
     spec:
       project: default
       source:
