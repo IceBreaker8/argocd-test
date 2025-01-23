@@ -3,7 +3,7 @@ kind: Certificate
 metadata:
   name: argocd-certificate
   namespace: argocd
-    annotations:
+  annotations:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   secretName: argocd-cert-secret
