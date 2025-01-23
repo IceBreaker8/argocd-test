@@ -8,7 +8,9 @@ crds:
 
 redis-ha:
   enabled: true
-
+  haproxy:
+    IPv6:
+      enabled: false
 controller:
   replicas: 1
 
