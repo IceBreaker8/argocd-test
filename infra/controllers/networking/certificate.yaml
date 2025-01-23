@@ -8,8 +8,7 @@ metadata:
 spec:
   secretName: argocd-cert-secret
   dnsNames:
-    - "*.icedev.tn"
-    - icedev.tn
+    - "prod-argocd.icedev.tn"
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
