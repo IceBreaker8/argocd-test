@@ -3,7 +3,7 @@ kind: Kustomization
 
 helmCharts:
   - name: nginx-gateway-fabric
-    repo: oci://ghcr.io/nginx/charts
+    repo: oci://ghcr.io/nginxinc/charts
     version: 0.0.0-edge
     releaseName: nginx-gateway-fabric
     namespace: nginx-gateway
