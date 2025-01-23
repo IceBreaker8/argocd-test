@@ -1,9 +1,8 @@
-
-
 ## Accessing the cluster
 
 1 - Install kubeconfig from your cloud provider's managed k8s cluster
-2 - Powershell: 
+2 - Powershell:
+
 ```bash
 [System.Environment]::SetEnvironmentVariable("KUBECONFIG", "C:\path\to\your\kubeconfig.yaml", "User")
 ```
@@ -11,20 +10,25 @@
 # Prerequisite
 
 ## Install Gateway API:
+
 ```bash
-kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/latest/download/experimental-install.yaml 
+kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/latest/download/experimental-install.yaml
 ```
+
 ## Install ArgoCD with our custom configuration (delete the newly created charts folder)
+
 ```bash
 kubectl kustomize --enable-helm infra/controllers/argocd | kubectl apply -f -
 ```
 
 ## Get ArgoCD password and decode the base64 (change it later):
+
 ```bash
 kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
 ```
 
 ## Apply the infrastructure THEN the applications manifests
+
 ```bash
 kubectl apply -f .\bootstrap\infrastructure.yaml
 kubectl apply -f .\bootstrap\applications.yaml
