@@ -15,6 +15,12 @@
 kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/standard-install.yaml
 ```
 
+## Install Nginx Gateway API:
+
+```bash
+kubectl kustomize https://github.com/nginxinc/nginx-gateway-fabric/config/crd/gateway-api/standard | kubectl apply -f -
+```
+
 ## Install ArgoCD with our custom configuration (delete the newly created charts folder)
 
 ```bash
