@@ -1,19 +1,19 @@
-apiVersion: gateway.networking.k8s.io/v1beta1
+apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: argocd-route
-  namespace: nginx-gateway
+  name: argocd
+  namespace: argocd
 spec:
   parentRefs:
     - name: argocd-gateway
+      namespace: nginx-gateway
   hostnames:
-    - prod46246846-argocd.icedev.tn
+    - "prod46246846-argocd.icedev.tn"
   rules:
     - matches:
         - path:
             type: PathPrefix
             value: /
       backendRefs:
-        - kind: Service
-          name: argocd-server
+        - name: argocd-server
           port: 80
