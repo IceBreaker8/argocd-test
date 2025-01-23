@@ -6,6 +6,11 @@ crds:
   # -- Keep CRDs on chart uninstall
   keep: false
 
+redis-ha:
+  enabled: true
+  haproxy:
+    IPv6:
+      enabled: false
 controller:
   replicas: 1
 
