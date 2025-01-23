@@ -9,7 +9,8 @@ helmCharts:
     namespace: ingress-nginx
     valuesInline:
       controller:
-        replicaCount: 2
+        service:
+          type: NodePort
 
 namespace: ingress-nginx
 
