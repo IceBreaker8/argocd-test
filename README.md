@@ -62,3 +62,7 @@ https://chatgpt.com/share/678ebf50-9518-8001-8182-d0d39c7f12ee
 
 HttpRoute (instead of ingress), gateway and cert
 https://chatgpt.com/share/678ebf50-9518-8001-8182-d0d39c7f12ee
+
+# namespace stuck on deletion
+
+https://www.youtube.com/watch?v=ebxbJcyMD-o
