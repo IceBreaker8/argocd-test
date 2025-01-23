@@ -3,7 +3,8 @@ kind: Kustomization
 
 helmCharts:
   - name: nginx-gateway-fabric
-    url: oci://ghcr.io/nginxinc/charts/nginx-gateway-fabric
-    version: 1.6.0
-    releaseName: nginx-gateway
+    repo: oci://ghcr.io/nginxinc/charts
+    version: v1.5.1
+    releaseName: nginx-gateway-fabric
     namespace: nginx-gateway
+    valuesFile: nginx-values.yaml
