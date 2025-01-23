@@ -1,0 +1,11 @@
+# nginx-values.yaml
+controller:
+  service:
+    type: LoadBalancer
+  enableGatewayAPI: true
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  ingressClassResource:
+    default: true
