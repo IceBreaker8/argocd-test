@@ -66,3 +66,7 @@ https://chatgpt.com/share/678ebf50-9518-8001-8182-d0d39c7f12ee
 # namespace stuck on deletion
 
 https://www.youtube.com/watch?v=ebxbJcyMD-o
+
+## Nginx failure (OVH)
+
+If you're trying to install ingress nginx, make it as nodePort instead of load balancer, OVH hates on u for not using their own load balancer :(
