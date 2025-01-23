@@ -6,57 +6,17 @@ crds:
   # -- Keep CRDs on chart uninstall
   keep: false
 
+redis-ha:
+  enabled: true
+
 controller:
-  resources:
-    requests:
-      cpu: 100m
-      memory: 700Mi
-    limits:
-      cpu: 4000m
-      memory: 2Gi
-
-dex:
-  resources:
-    requests:
-      cpu: 20m
-      memory: 64Mi
-    limits:
-      cpu: 1000m
-      memory: 256Mi
-
-redis:
-  resources:
-    requests:
-      cpu: 100m
-      memory: 64Mi
-    limits:
-      cpu: 2000m
-      memory: 128Mi
+  replicas: 1
 
 server:
-  resources:
-    requests:
-      cpu: 50m
-      memory: 64Mi
-    limits:
-      cpu: 4000m
-      memory: 256Mi
+  replicas: 2
+
+repoServer:
+  replicas: 2
 
 applicationSet:
-  resources:
-    requests:
-      cpu: 50m
-      memory: 64Mi
-    limits:
-      cpu: 1000m
-      memory: 512Mi
-
-notifications:
-  enabled: false
-  resources:
-    requests:
-      cpu: 100m
-      memory: 64Mi
-    limits:
-      cpu: 1000m
-      memory: 128Mi
+  replicas: 2
