@@ -8,6 +8,3 @@ helmCharts:
     releaseName: ingress-nginx
     namespace: ingress-nginx
     valuesFile: values.yaml
-
-resources:
-  - ns.yaml
