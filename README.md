@@ -18,7 +18,6 @@ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/downloa
 ## Install ArgoCD with our custom configuration (delete the newly created charts folder)
 
 ```bash
-kubectl create ns argocd
 kubectl kustomize --enable-helm infra/controllers/argocd | kubectl apply -f -
 ```
 
