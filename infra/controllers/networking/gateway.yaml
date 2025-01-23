@@ -1,7 +1,7 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
-  name: argocd-gateway
+  name: global-gateway
   namespace: gateway
   annotations:
     argocd.argoproj.io/sync-wave: "3"
@@ -17,4 +17,4 @@ spec:
       tls:
         mode: Terminate
         certificateRefs:
-          - name: argocd-certificate
+          - name: global-certificate

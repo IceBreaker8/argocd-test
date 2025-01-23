@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: argocd-certificate
+  name: global-certificate
   namespace: gateway
   annotations:
     argocd.argoproj.io/sync-wave: "2"
