@@ -1,14 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-# Fetch and apply the CRDs
 resources:
   - https://github.com/nginxinc/nginx-gateway-fabric/config/crd/gateway-api/standard
 
 helmCharts:
-  - name: my-nginx-gateway-fabric
+  - name: nginx-gateway-fabric
     version: 1.5.1
     repo: oci://ghcr.io/nginxinc/charts
-    releaseName: my-nginx-gateway-fabric
+    releaseName: nginx-gateway-fabric
     namespace: nginx-gateway-fabric
     valuesFile: values.yaml
