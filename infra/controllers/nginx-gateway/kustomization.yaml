@@ -3,8 +3,8 @@ kind: Kustomization
 
 helmCharts:
   - name: nginx-gateway-fabric
-    repo: https://github.com/nginx/nginx-gateway-fabric/tree/main/charts
-    version: v1.6.0
+    repo: https://github.com/nginx/nginx-gateway-fabric/tree/main/charts/nginx-gateway-fabric
+    version: 1.6.0
     releaseName: nginx-gateway-fabric
     namespace: nginx-gateway
     valuesFile: values.yaml
