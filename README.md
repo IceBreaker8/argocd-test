@@ -12,12 +12,13 @@
 ## Install Gateway API:
 
 ```bash
-kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/latest/download/experimental-install.yaml
+kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/standard-install.yaml
 ```
 
 ## Install ArgoCD with our custom configuration (delete the newly created charts folder)
 
 ```bash
+kubectl create ns argocd
 kubectl kustomize --enable-helm infra/controllers/argocd | kubectl apply -f -
 ```
 
