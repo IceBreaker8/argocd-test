@@ -9,7 +9,5 @@ helmCharts:
     namespace: ingress-nginx
     valuesFile: values.yaml
 
-namespace: ingress-nginx
-
 resources:
   - ns.yaml
