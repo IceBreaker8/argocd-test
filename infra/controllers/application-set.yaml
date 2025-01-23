@@ -3,7 +3,6 @@ kind: ApplicationSet
 metadata:
   name: controllers
   namespace: argocd
-
 spec:
   generators:
     - git:
@@ -11,20 +10,20 @@ spec:
         revision: main
         directories:
           - path: infra/controllers/*
-          
+
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: "{{path.basename}}"
     spec:
       project: default
       source:
         repoURL: https://github.com/IceBreaker8/argocd-test
         targetRevision: main
-        path: '{{path}}'
+        path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
+        namespace: "{{path.basename}}"
       syncPolicy:
-        automated: 
+        automated:
           selfHeal: true
           prune: true
