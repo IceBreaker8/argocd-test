@@ -16,6 +16,7 @@ spec:
       name: "{{path.basename}}"
     spec:
       project: default
+      source:
         repoURL: https://github.com/IceBreaker8/argocd-test
         targetRevision: main
         path: "{{path}}"
