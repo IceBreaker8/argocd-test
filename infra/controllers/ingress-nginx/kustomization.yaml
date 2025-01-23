@@ -7,10 +7,7 @@ helmCharts:
     version: 4.7.1
     releaseName: ingress-nginx
     namespace: ingress-nginx
-    valuesInline:
-      controller:
-        service:
-          type: NodePort
+    valuesFile: values.yaml
 
 namespace: ingress-nginx
 
