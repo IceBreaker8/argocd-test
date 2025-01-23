@@ -1,0 +1,62 @@
+configs:
+  cm:
+    kustomize.buildOptions: "--enable-helm"
+crds:
+  install: true
+  # -- Keep CRDs on chart uninstall
+  keep: false
+
+controller:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 700Mi
+    limits:
+      cpu: 4000m
+      memory: 2Gi
+
+dex:
+  resources:
+    requests:
+      cpu: 20m
+      memory: 64Mi
+    limits:
+      cpu: 1000m
+      memory: 256Mi
+
+redis:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 64Mi
+    limits:
+      cpu: 2000m
+      memory: 128Mi
+
+server:
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 4000m
+      memory: 256Mi
+
+applicationSet:
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 1000m
+      memory: 512Mi
+
+notifications:
+  enabled: false
+  resources:
+    requests:
+      cpu: 100m
+      memory: 64Mi
+    limits:
+      cpu: 1000m
+      memory: 128Mi
