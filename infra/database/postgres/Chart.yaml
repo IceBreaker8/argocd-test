@@ -1,7 +1,0 @@
-apiVersion: v2
-name: my-postgres-database
-version: 0.1.0
-dependencies:
-  - name: postgresql
-    version: "16.4.3"  # Use the desired version
-    repository: "https://charts.bitnami.com/bitnami"
