@@ -3,8 +3,8 @@ kind: Kustomization
 
 helmCharts:
   - name: gateway-helm
-    repo: oci://docker.io/envoyproxy/gateway-helm
-    version: v0.0.0-latest
+    repo: https://github.com/envoyproxy/gateway/tree/main/charts
+    version: 1.2.6
     releaseName: gateway-helm
     namespace: envoy-gateway
     valuesFile: values.yaml
