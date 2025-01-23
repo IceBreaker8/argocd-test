@@ -8,3 +8,4 @@ helmCharts:
     releaseName: nginx-gateway-fabric
     namespace: nginx-gateway
     valuesFile: values.yaml
+    includeCRDs: true
