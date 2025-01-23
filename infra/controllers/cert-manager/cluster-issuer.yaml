@@ -3,7 +3,7 @@ kind: ClusterIssuer
 metadata:
   name: letsencrypt-prod
   annotations:
-    argocd.argoproj.io/sync-wave: "1"  # Higher number means later sync
+    argocd.argoproj.io/sync-wave: "1" # Higher number means later sync, this overrides what's in the kustomization file
 spec:
   acme:
     email: ahmadfrikha2016@gmail.com
