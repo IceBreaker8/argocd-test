@@ -8,8 +8,3 @@ helmCharts:
     releaseName: postgresql
     namespace: postgres
     valuesFile: values.yaml
-
-namespace: postgres
-
-resources:
-  - ns.yaml
