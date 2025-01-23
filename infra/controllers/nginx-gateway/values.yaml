@@ -1,0 +1,21 @@
+service:
+  # -- Creates a service to expose the NGINX Gateway Fabric pods.
+  create: true
+
+  # @schema
+  # enum:
+  #   - ClusterIP
+  #   - NodePort
+  #   - LoadBalancer
+  # @schema
+  # -- The type of service to create for the NGINX Gateway Fabric.
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+    - port: 443
+      targetPort: 443
+      protocol: TCP
+      name: https
