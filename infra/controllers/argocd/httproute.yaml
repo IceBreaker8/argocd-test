@@ -7,7 +7,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "4"
 spec:
   parentRefs:
-    - name: argocd-gateway
+    - name: global-gateway
       namespace: gateway
   hostnames:
     - "prod-argocd.icedev.tn"
