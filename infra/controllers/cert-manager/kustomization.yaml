@@ -1,4 +1,3 @@
-# kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -12,11 +11,3 @@ helmCharts:
     releaseName: cert-manager
     namespace: cert-manager
     valuesFile: values.yaml
-
-dependsOn:
-  - name: cert-manager
-    kind: HelmRelease
-    namespace: cert-manager
-  - name: ingress-nginx
-    kind: HelmRelease
-    namespace: ingress-nginx
