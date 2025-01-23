@@ -2,7 +2,7 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: argocd-gateway
-  namespace: argocd
+  namespace: gateway
   annotations:
     argocd.argoproj.io/sync-wave: "3"
 spec:
@@ -11,7 +11,10 @@ spec:
     - name: https
       port: 443
       protocol: HTTPS
+      allowedRoutes:
+        namespaces:
+          from: All
       tls:
+        mode: Terminate
         certificateRefs:
           - name: argocd-certificate
-      hostname: prod-argocd.icedev.tn

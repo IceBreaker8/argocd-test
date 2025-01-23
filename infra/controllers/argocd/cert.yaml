@@ -2,13 +2,14 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: argocd-certificate
-  namespace: argocd
+  namespace: gateway
   annotations:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   secretName: argocd-cert-secret
   dnsNames:
-    - prod-argocd.icedev.tn
+    - "*.icedev.tn"
+    - icedev.tn
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
