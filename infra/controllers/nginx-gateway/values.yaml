@@ -19,3 +19,6 @@ service:
       targetPort: 443
       protocol: TCP
       name: https
+
+nginxGateway:
+  replicaCount: 2
