@@ -6,5 +6,5 @@ spec:
   gatewayClassName: nginx
   listeners:
     - name: http
-      protocol: HTTP
       port: 80
+      protocol: HTTP
