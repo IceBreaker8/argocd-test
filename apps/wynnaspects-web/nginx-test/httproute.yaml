@@ -1,10 +1,10 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: httproute
+  name: coffee
 spec:
   parentRefs:
-    - name: argocd-gateway
+    - name: cafe
   hostnames:
     - "prod46246846-argocd.icedev.tn"
   rules:
@@ -13,5 +13,5 @@ spec:
             type: PathPrefix
             value: /
       backendRefs:
-        - name: myapp-service
+        - name: coffee
           port: 80
