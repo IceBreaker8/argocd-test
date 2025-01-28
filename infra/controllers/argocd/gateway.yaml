@@ -6,6 +6,7 @@ metadata:
 spec:
   gatewayClassName: nginx
   listeners:
-    - name: http
+    - hostname: prod46246846-argocd.icedev.tn
+      name: argocd-route-http
       port: 80
       protocol: HTTP

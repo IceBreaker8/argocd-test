@@ -7,7 +7,7 @@ spec:
   parentRefs:
     - name: argocd-gateway
   hostnames:
-    - "prod46246846-argocd.icedev.tn"
+    - prod46246846-argocd.icedev.tn
   rules:
     - matches:
         - path:
