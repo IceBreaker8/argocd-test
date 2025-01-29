@@ -9,7 +9,7 @@ service:
   #   - LoadBalancer
   # @schema
   # -- The type of service to create for the NGINX Gateway Fabric.
-  type: LoadBalancer
+  type: NodePort
   ports:
     - port: 80
       targetPort: 80
