@@ -8,7 +8,7 @@ spec:
     - name: external-gateway
       namespace: nginx-gateway
   hostnames:
-    - "prod462446-argocd.icedev.tn"
+    - "prod46246846-argocd.icedev.tn"
   rules:
     - matches:
         - path:
