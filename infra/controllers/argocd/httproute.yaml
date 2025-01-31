@@ -6,8 +6,9 @@ metadata:
 spec:
   parentRefs:
     - name: argocd-gateway
+      namespace: argocd
   hostnames:
-    - prod46246846-argocd.icedev.tn
+    - "prod46246846-argocd.icedev.tn"
   rules:
     - matches:
         - path:
